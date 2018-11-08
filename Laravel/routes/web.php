@@ -12,5 +12,37 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
 });
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/news', function () {
+    return view('news');
+});
+
+Route::get('/registersuccess', function () {
+    return view('registersuccess');
+});
+
+Route::get('/register', 'formController@formvalidator');
+Route::post('/register', 'formController@formvalidate');
+
+//Route::get('/contact', function (){
+//    return 'contact';
+//});
+//
+//Route::get('/agenda', function (){
+//    return 'agenda';
+//});
+//
+//Route::get('/test', 'TestController@test');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
